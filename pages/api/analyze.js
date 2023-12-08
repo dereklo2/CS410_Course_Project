@@ -1,3 +1,5 @@
+// Im working on implementing this but this would essentially make the call to GPT tp perfrom the sentiment analysis
+
 import axios from 'axios';
 
 export default async function handler(req, res) {
