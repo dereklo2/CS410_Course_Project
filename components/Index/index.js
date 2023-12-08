@@ -1,6 +1,18 @@
 import styles from '../../styles/Pages.module.css';
+import React, { useState, useEffect } from 'react';
+
 
 export default function Index({ navigateToPage }) {
+  const [selectedText, setSelectedText] = useState('');
+  useEffect(() => {
+    // Ask background.js for the selected text
+    chrome.runtime.sendMessage({ getText: true }, response => {
+      if (response && response.text) {
+        setSelectedText(response.text);
+      }
+    });
+  }, []);
+  
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -13,8 +25,7 @@ export default function Index({ navigateToPage }) {
           will help users with mental health conditions avoid content that could potentially be disturbing 
           or cause emotional harm.  
         </p>
-        <h1 className={styles.code}>Index Page ./components/Index/index.js</h1>
-        <p>{"[ - Add some page content here - ]"}</p>
+        <textarea value={selectedText} readOnly />
         <p onClick={() => navigateToPage('new')}>{"ANALYZE"}</p>
       </main>
     </div>
