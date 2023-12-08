@@ -26,7 +26,6 @@ export default function Index({ navigateToPage }) {
           or cause emotional harm.  
         </p>
         <textarea value={selectedText} readOnly />
-        <p>{"[ - Add some page content here - ]"}</p>
         <p onClick={() => navigateToPage('new')}>{"ANALYZE"}</p>
       </main>
     </div>
