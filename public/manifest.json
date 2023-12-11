@@ -19,10 +19,13 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://*/*", "http://*/*"],
-      "js": ["inject.js"]
+      "matches": ["https://www.reddit.com/r/*/comments/*", "http://www.reddit.com/r/*/comments/*", "https://localhost:3000/*", "http://localhost:3000/*"],
+      "js": ["contentScript.js"]
     }
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "index.html"
