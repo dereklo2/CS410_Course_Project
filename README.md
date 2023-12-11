@@ -4,7 +4,6 @@ Reddit Sentiment Analysis Chrome Extension is an application that scrapes reddit
 
 ## Table of Contents ✨  
 
-- [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 

@@ -1,37 +1,21 @@
-
-import axios from 'axios';
-
 let sentiment = "Sorry, I can't perform sentiment analysis on this page.";
 let text = '';
 
-function loadEnvVariables() {
-  // Read the .env file content
-  const envContent = chrome.runtime.getURL('.env');
-
-  // Split the content into lines
-  const lines = envContent.split('\n');
-
-  // Process each line and set environment variables
-  for (const line of lines) {
-    const [key, value] = line.split('=');
-    if (key && value) {
-      process.env[key.trim()] = value.trim();
-    }
-  }
-}
-
-// Load environment variables
-loadEnvVariables();
+// Should only be used when running locally!
+let API_KEY = '';
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.getText) {
     text = request.text;
     images = request.images;
 
+    // Uncomment this block once you get the chatgpt api key
+    /*
     const apiUrl = "https://api.openai.com/v1/chat/completions";
 
     var imageSentiments = ""
     var requestData = {}
+
     images.forEach(function (img) {
       requestData = {
         model: "gpt-4-vision-preview",
@@ -55,15 +39,18 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         ],
         max_tokens: 300
       };
-      axios.post(apiUrl, requestData, {
+      fetch(apiUrl, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${process.env.API_KEY}`
-        }
+          "Authorization": `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify(requestData)
       })
-        .then(response => {
-          console.log("Response from OpenAI:", response.data);
-          imageSentiments += response.data + ", "
+        .then(response => response.json())
+        .then(data => {
+          console.log("Response from OpenAI:", data);
+          imageSentiments += data + ", "
         })
         .catch(error => {
           console.error("Error:", error);
@@ -84,15 +71,18 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         }
       ]
     };
-    axios.post(apiUrl, requestData, {
+    fetch(apiUrl, {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.API_KEY}`
-      }
+        "Authorization": `Bearer ${API_KEY}`
+      },
+      body: JSON.stringify(requestData)
     })
-      .then(response => {
-        console.log("Response from OpenAI:", response.data);
-        sentiment = response.data
+      .then(response => response.json())
+      .then(data => {
+        console.log("Response from OpenAI:", data);
+        sentiment = data
       })
       .catch(error => {
         console.error("Error:", error);
@@ -108,19 +98,26 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         }
       ]
     };
-    axios.post(apiUrl, requestData, {
+    fetch(apiUrl, {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.API_KEY}`
-      }
+        "Authorization": `Bearer ${API_KEY}`
+      },
+      body: JSON.stringify(requestData)
     })
-      .then(response => {
-        console.log("Response from OpenAI:", response.data);
-        sentiment += "\n\n The sentiment analysis of the images is: " + response.data
+      .then(response => response.json())
+      .then(data => {
+        console.log("Response from OpenAI:", data);
+        sentiment += "\n\n The sentiment analysis of the images is: " + data
       })
       .catch(error => {
         console.error("Error:", error);
       });
+      */
+
+    // Remove this line once you get the chatgpt api key
+    sentiment = "The sentiment in the Reddit post is generally positive as the user shares their journey with their Steam Deck, including personalizing it with a red shell. However, some comments express negativity and criticism, particularly regarding the user's long fingernails. Despite the mixed reactions, the overall sentiment leans towards a positive and enthusiastic tone."
   }
 });
 

@@ -15,8 +15,7 @@ export default function Index({ navigateToPage }) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>Reddit Sentiment Analyzer</h1>
-        <h3>The sentiment of this post is...</h3>
+        <h2>The sentiment of this post is...</h2>
         <p className={styles.description}>{analysis}</p>
       </main>
     </div>
