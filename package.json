@@ -1,7 +1,7 @@
 {
-  "name": "next-chrome-starter",
+  "name": "Reddit Sentiment Analysis",
   "version": "0.0.1",
-  "description": "Next.js Chrome Extension Starter, Demo Example by ibnzUK. https://github.com/ibnzUK/next-chrome-starter",
+  "description": "Chrome Extension for performing Reddit Post Sentiment Analysis https://github.com/dereklo2/CS410_Course_Project",
   "main": "index.js",
   "scripts": {
     "build": "npm run prep",
@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.2",
     "glob": "^10.2.3",
     "next": "^13.4.1",
     "react": "^18.2.0",

@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "NEXT-CHROME-STARTER",
+  "name": "Reddit Sentiment Analysis",
   "short_name": "N-C-S",
   "version": "0.0.1",
-  "description": "Next.js Chrome Extension Starter, Demo Example by ibnzUK. https://github.com/ibnzUK/next-chrome-starter",
+  "description": "Chrome Extension for performing Reddit Post Sentiment Analysis https://github.com/dereklo2/CS410_Course_Project",
   "icons": {
     "16": "/icons/icon16.png",
     "32": "/icons/icon32.png",
@@ -20,12 +20,9 @@
   "content_scripts": [
     {
       "matches": ["https://*/*", "http://*/*"],
-      "js": ["contentScript.js"]
+      "js": ["inject.js"]
     }
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "index.html"
