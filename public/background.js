@@ -2,7 +2,7 @@ let sentiment = "Sorry, I can't perform sentiment analysis on this page.";
 let text = '';
 
 // Should only be used when running locally!
-let API_KEY = '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';
+let API_KEY = '';
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.getText) {
@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     images = request.images;
 
     // Uncomment this block once you get the chatgpt api key
-    
+    /*
     const apiUrl = "https://api.openai.com/v1/chat/completions";
 
     var imageSentiments = ""
@@ -114,10 +114,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       .catch(error => {
         console.error("Error:", error);
       });
-      
+      */
 
     // Remove this line once you get the chatgpt api key
-    // sentiment = "The sentiment in the Reddit post is generally positive as the user shares their journey with their Steam Deck, including personalizing it with a red shell. However, some comments express negativity and criticism, particularly regarding the user's long fingernails. Despite the mixed reactions, the overall sentiment leans towards a positive and enthusiastic tone."
+    sentiment = "The sentiment in the Reddit post is generally positive as the user shares their journey with their Steam Deck, including personalizing it with a red shell. However, some comments express negativity and criticism, particularly regarding the user's long fingernails. Despite the mixed reactions, the overall sentiment leans towards a positive and enthusiastic tone."
   }
 });
 
