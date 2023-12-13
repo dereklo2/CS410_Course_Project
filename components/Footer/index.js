@@ -8,7 +8,7 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Footer V.0.0.1
+        Check out our repo here!
         <span className={styles.logo}>
           <img
             src="icons/icon16.png"
