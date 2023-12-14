@@ -53,3 +53,4 @@ npm run build
 
 5. The Reddit Sentiment Analysis Chrome Extension should now be loaded as an unpacked extension in Google Chrome
 
+6. After subsequent builds, all you need to do is refresh the extension and the latest version will be in use!
