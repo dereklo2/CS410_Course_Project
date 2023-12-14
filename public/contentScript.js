@@ -23,4 +23,4 @@ function scrapeText() {
 }
 
 // Run the scraping function when the page is fully loaded
-window.onload = scrapeText;
+scrapeText();
