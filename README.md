@@ -7,7 +7,7 @@ Reddit Sentiment Analysis Chrome Extension is an application that scrapes reddit
 - [Installation](#installation)
 - [Usage](#usage)
 - [Architecture](#architecture)
-- [Demo](#demo)
+- [Presentation](#presentation)
 
 
 # Installation
@@ -65,6 +65,6 @@ This project utilizes Next.js, React, Javascript, CSS, and OpenAI to create a Ch
 
 ![Architecture](architecture.png)
 
-# Demo
+# Presentation
 
-[![Demo](https://i.ytimg.com/vi/ZzZZMg7wJgo/hqdefault.jpg)](https://www.youtube.com/watch?v=ZzZZMg7wJgo "Demo")
+[![Presentation](https://i.ytimg.com/vi/ZzZZMg7wJgo/hqdefault.jpg)](https://www.youtube.com/watch?v=ZzZZMg7wJgo "Presentation")
