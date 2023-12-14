@@ -60,4 +60,6 @@ npm run build
 
 # Architecture
 
+This project utilizes Next.js, React, Javascript, CSS, and OpenAI to create a Chrome Extension that can perform sentiment analysis on Reddit posts and comments. See the architecture diagram below to understand the components and flow of the application. In-line comments are also available to read to gain a greater insight into how the application works. 
+
 ![Architecture](architecture.png)
