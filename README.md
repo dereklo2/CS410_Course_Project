@@ -55,6 +55,8 @@ npm run build
 
 6. After subsequent builds, all you need to do is refresh the extension and the latest version will be in use!
 
+7. Note that you may have to refresh every post for tldr to work if the "Open posts in new tab" option is not enabled. To enable, go to User Settings --> Feed Settings and scroll to the bottom.
+
 
 # Architecture
 
