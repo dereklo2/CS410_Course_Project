@@ -7,14 +7,11 @@ let API_KEY = '';
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.getText) {
     text = request.text;
+    // Perform normalization of post content via regex
     text = text.replace(/\[.*?\]/g, '');
     images = request.images;
 
-    // Uncomment this block once you get the chatgpt api key
-
     const apiUrl = "https://api.openai.com/v1/chat/completions";
-
-    var requestData = {}
 
     // Perform sentiment analysis on post and comments
     var myHeaders = new Headers();
@@ -49,9 +46,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         return;
       })
       .catch(error => {
-        sentiment = error.message;
+        sentiment = "Please provide a valid OpenAI API Key and try again!";
         return;
       });
+
+    // TODO: Add image sentiment analysis via GPT Vision API
 
     sentiment = "Fetching the sentiment analysis. Please wait a few seconds and refresh the extension :)"
   }
