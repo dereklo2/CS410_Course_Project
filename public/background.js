@@ -1,4 +1,4 @@
-let sentiment = "Please refresh the page and then try me!";
+let sentiment = "Please refresh the page and make sure you're reading a post!";
 let text = '';
 
 // Should only be used when running locally!
