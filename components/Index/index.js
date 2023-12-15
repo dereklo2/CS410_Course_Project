@@ -1,6 +1,7 @@
 import styles from '../../styles/Pages.module.css';
 import React, { useState, useEffect } from 'react';
 
+// This is the main page of the extension. 
 export default function Index({ navigateToPage }) {
   const [analysis, setAnalysis] = useState('');
   useEffect(() => {
@@ -11,7 +12,8 @@ export default function Index({ navigateToPage }) {
       }
     });
   }, []);
-  
+
+  // Render the sentiment analysis of the post
   return (
     <div className={styles.container}>
       <main className={styles.main}>

@@ -18,6 +18,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", "Bearer " + API_KEY);
 
+    // Create the prompt request body
     var raw = JSON.stringify({
       "model": "gpt-3.5-turbo",
       "messages": [
@@ -32,6 +33,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       ]
     });
 
+    // Create the request options
     var requestOptions = {
       method: 'POST',
       headers: myHeaders,
@@ -39,6 +41,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       redirect: 'follow'
     };
 
+    // Make the request to OpenAI
     fetch(apiUrl, requestOptions)
       .then(response => response.json())
       .then(result => {
