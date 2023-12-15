@@ -30,6 +30,15 @@ To install and run Reddit Sentiment Analysis Chrome Extension locally, follow th
 ## Usage Locally  🔥
 To run the Reddit Sentiment Analysis Chrome Extension locally, follow these steps:
 
+### ⚠️ API Keys for UIUC Students and TAs ⚠️ 
+> ⚠️ **IMPORTANT:** UIUC students and TAs can access the API key for testing purposes through this [Google Doc link](https://docs.google.com/document/d/1Am-ZCACp_2gXU2N2co6XSYSeVI4oQLsFvMypp9hGtbk/edit?usp=sharing). 
+>
+> Please note that you must have an @illinois.edu email address to access this document!
+
+Prior to running, replace the empty string 'API_KEY', in public/background.js, with the API key in the doc above
+```js
+let API_KEY = '';
+```
 Run the project:
 ```
 npm run dev
