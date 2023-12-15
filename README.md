@@ -8,6 +8,7 @@ Reddit Sentiment Analysis Chrome Extension is an application that scrapes reddit
 - [Usage](#usage)
 - [Architecture](#architecture)
 - [Presentation](#presentation)
+- [Documentation](#documentation)
 
 
 # Installation
@@ -68,3 +69,15 @@ This project utilizes Next.js, React, Javascript, CSS, and OpenAI to create a Ch
 # Presentation
 
 [![Presentation](https://i.ytimg.com/vi/ZzZZMg7wJgo/hqdefault.jpg)](https://www.youtube.com/watch?v=ZzZZMg7wJgo "Presentation")
+
+# Documentation
+
+Scraping in contents.js: This script scrapes data from Reddit posts, including text and images.
+
+API Call in background.js: This file handles the API call to OpenAI for sentiment analysis. The call is made client-side, with plans to potentially shift it server-side in the future.
+
+Display in index.js: The results from the API call are displayed in this file.
+
+In a different branch (Rafael Branch), there's functionality for analyzing user-selected text. This involves contents.js capturing the selected text, background.js acting as a service worker to process this text, and index.js displaying the analysis results. The integration of OpenAI API calls for this functionality is planned to be implemented in background.js, or alternatively, through a server-side function.
+
+Our team worked collaboratively on all aspects of the project, ensuring an equal and substantial contribution from each member. Every team member was actively involved in coding, testing, and debugging to ensure the smooth running of our project. We maintained open communication and regularly shared insights to enhance the project's functionality
